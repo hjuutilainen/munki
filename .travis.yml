@@ -2,4 +2,6 @@ os: osx
 osx_image: xcode7.3
 script: ./code/tools/make_munki_mpkg.sh
 addons:
-  artifacts: true
+  artifacts:
+      paths:
+        - $(git ls-files -o  --exclude-standard | tr "\n" ":")
